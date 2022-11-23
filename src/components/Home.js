@@ -26,19 +26,7 @@ const Home = (props) => {
         const q = query(colref);
         onSnapshot(q, snapshot =>(
             snapshot.docs.map((doc) =>{
-                // if(doc.data().type=='recommend') {
-                //     recommends = [...recommends, { id: doc.id, ...doc.data() }];
-                // }
-                // if(doc.data().type=='new') {
-                //     newDisneys = [...newDisneys, { id: doc.id, ...doc.data() }];
-                //     console.log(doc.data().title);
-                // }
-                // if(doc.data().type=='original') {
-                //     originals = [...originals, { id: doc.id, ...doc.data() }];
-                // }
-                // if(doc.data().type=='trending') {
-                //     trendings = [...trendings, { id: doc.id, ...doc.data() }];
-                // }
+                
                 switch(doc.data().type) {
                     
                     
@@ -69,36 +57,7 @@ const Home = (props) => {
 
             } )
         ))
-        // db.collection('movies').onSnapshot((snapshot) => {
-        //     snapshot.docs.map((doc) => {
-        //         switch(doc.data().type) {
-        //             case "recommend":
-        //                 recommends = [...recommends, { id: doc.id, ...doc.data() }];
-        //                 break;
-
-        //             case "new":
-        //                 newDisney = [...newDisney, { id: doc.id, ...doc.data() }];
-        //                 break;
-
-        //             case "original":
-        //                 originals = [...originals, { id: doc.id, ...doc.data() }];
-        //                 break;
-
-        //             case "trending":
-        //                 trending = [...trending, { id: doc.id, ...doc.data() }];
-        //                 break;
-        //         }
-        //     });
-
-        //     dispatch(
-        //         setMovies({
-        //             recommend: recommends,
-        //             newDisney: newDisney,
-        //             original: originals,
-        //             trending: trending,
-        //         })
-        //     );
-        // });
+        //
     }, [userName]);
 
     return(
